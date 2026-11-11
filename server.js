@@ -3,15 +3,11 @@ import express from 'express';
 const app = express();
 const router = express.Router();
 
-router.get('/hello', (req, res) => {
+router.get('/', (req, res) => {
     res.send('Hello, World!');
 });
 
-router.get('/me', (req, res) => {
-    res.send('Samir Kaled Ali Chehade')
-})
-
-app.use('/api', router);
+app.use('/', router);
 
 const PORT = Number(process.env.PORT) || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
